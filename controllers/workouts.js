@@ -29,7 +29,7 @@ router.get('/', function (req, res) {
 // using the URL parameter (which is the document _id)
 router.get('/:id', function (req, res) {
     db.Workout.findById(req.params.id)
-        .then(workout => res.json(workout)
+        .then(workout => res.json(workout))
         .catch(() => res.send('404 Error: Page Not Found'))
 })
 

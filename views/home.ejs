@@ -1,1 +1,49 @@
-FLO Motion Fitness
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'Flo Motion'}) %>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main>
+        <section class="hero">
+            <h2>Find your Next Workout Here!</h2>
+            <a href="/workouts" class="btn">Workout Now!</a>
+        </section>
+
+        <section class="about">
+            <h2>About Us</h2>
+            <p>Welcome to FLO, our guided workout website, and your ultimate resource for starting your fitness journey! We understand that taking the first step towards a healthier lifestyle can be intimidating, but we're here to make it easier for you. Our comprehensive workout guides and expert tips will help you navigate the world of fitness with confidence. By embracing the first law of motion, we believe that a body in motion stays in motion. Our goal is to empower you to get moving, providing you with the knowledge and tools you need to kickstart your fitness routine. Whether you're a beginner or looking to switch up your workouts, our website offers tailored guidance to help you achieve your fitness aspirations. Get started today and let us guide you towards a fitter, stronger, and more energized version of yourself.
+            </p>
+            <a href="/about" class="btn">Learn More</a>
+        </section>
+
+        <section class="featured-workouts">
+            <h2>Featured Workouts</h2>
+            <ul class="workout-grid">
+                <% for (let workout of workouts) { %>
+                <li>
+                    <figure>
+                        <img src="<%= workout.photo %>" alt="Arnold Press">
+                    </figure>
+                    <figcaption>
+                        <div class="featured-info">
+                            <h3><%= workout.name %></h3>
+                            <p>Exercises: <%= workout.description %></p>
+                        </div>
+                        <a href="/workouts/<%= workout._id %>" class="btn">Learn More</a>
+                    </figcaption>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

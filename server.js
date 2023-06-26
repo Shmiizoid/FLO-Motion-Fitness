@@ -16,6 +16,10 @@ const db = require('./models');
 --------------------------------------------------------------- */
 const app = express();
 
+/* Require the routes in the controllers folder
+--------------------------------------------------------------- */
+const workoutsCtrl = require('./controllers/workouts')
+
 
 /* Configure the app to refresh the browser when nodemon restarts
 --------------------------------------------------------------- */
@@ -59,6 +63,10 @@ app.get('/seed', function (req, res) {
                 })
         })
 });
+
+// This tells our app to look at the `controllers/workouts.js` file 
+// to handle all routes that begin with `localhost:3000/workouts`
+app.use('/workouts', workoutsCtrl)
 
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
