@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'Add a Workout | FLO Motion Fitness'}) %>
+    <link rel="stylesheet" href="/styles/workout-form.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <section class="hero">
+        <h2>Create a Workout</h2>
+        <h4><i>Let's get moving!</i></h4>
+    </section>
+
+    <form method="POST" action="/workouts">
+        <!-- Name input -->
+        <label for="name">Workout Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <!-- Exercises(#) input -->
+        <label for="exercises">Number of Exercises in Workout:</label>
+        <input type="number" id="exercises" name="exercises" min="0" required>
+        <br>
+        <!-- Sets input -->
+        <label for="sets">Sets per Exercise:</label>
+        <input type="number" id="sets" name="sets" min="0" required>
+        <br>
+        <!-- Reps input -->
+        <label for="reps">Repetitions per Set:</label>
+        <input type="number" id="reps" name="reps" min="0" required>
+        <br>
+        <!-- Cardio Amount input -->
+        <label for="cardioAmount">Cardio Amount:</label>
+        <input type="number" id="cardioAmount" name="cardioAmount" required>
+        <br>
+        </select>
+        <br>
+        <!-- Description input -->
+        <label for="description">Workout Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        <br>
+        <input type="submit" value="Create Workout">
+    </form>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

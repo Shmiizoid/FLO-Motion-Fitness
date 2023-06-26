@@ -5,6 +5,8 @@ const path = require('path');
 const express = require('express');
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
+const methodOverride = require('method-override');
+
 
 
 /* Require the db connection, models, and seed data
@@ -43,6 +45,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'))
 app.use(connectLiveReload());
 app.use(express.urlencoded({ extended: true }));
+// Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
+app.use(methodOverride('_method'));
 
 
 /* Mount routes
