@@ -2,36 +2,24 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'FLO Motion Fitness'}) %>
-    <link rel="stylesheet" href="/styles/pet-index.css">
+    <%- include('./partials/head.ejs', {title: `${workout.name} | FLO Motion Fitness`}) %>
+    <link rel="stylesheet" href="/styles/workout-details.css">
 </head>
 
 <body>
     <%- include('./partials/nav.ejs') %>
 
-    <section class="hero">
-        <h2>Find a Workout!</h2>
-        <h3>Get started now with some basic exercises, find what you like, and move!</h3>
-    </section>
-
-    <main>
-        <section class="listings">
-            <ul>
-                <% for (let workout of workouts) { %>
-                <li>
-                    <figure>
-                        <img src="<%= workout.photo %>">
-                        <figcaption>
-                            <h4><%= workout.name %></h4>
-                            <p><%= workout.equipment %>, <%= workout.cardioAmount %> minutes of cardio., <%= workout.description %></p>
-                            <a href="/workouts/<%= workout._id %>">Learn More</a>
-                        </figcaption>
-                    </figure>
-                </li>
-                <% } %>
-            </ul>
+    <div>
+        <img src="<%= workout.photo %>">
+        <h2 class="workout-name"><%= workout.name %></h2>
+        <section>
+            <p><strong>Exercises:</strong> <%= workout.exercises %></p>
+            <p><strong>Sets:</strong> <%= workout.sets %></p>
+            <p><strong>Reps per set:</strong> <%= workout.reps %></p>
+            <p><strong>Cardio Amount:</strong> <%= `${workout.cardioAmount}` %></p>
+            <p><strong>Description:</strong> <%= workout.description %></p>
         </section>
-    </main>
+    </div>
 
     <%- include('./partials/footer.ejs') %>
 </body>

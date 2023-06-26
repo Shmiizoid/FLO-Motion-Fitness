@@ -1,7 +1,7 @@
 // Require the Mongoose package
 const mongoose = require('mongoose');
 
-// Create a schema to define the properties of the pets collection
+// Create a schema to define the properties of the workouts collection
 const workoutSchema = new mongoose.Schema({
     name: { type: String, required: true },
     exercises: { type: Number, min: 0, required: true },

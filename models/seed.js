@@ -7,7 +7,8 @@ const workouts = [
         equipment: "Free weights and pull-up bar",
         cardio: true,
         cardioAmount: 20,
-        description: "Deadlifts, pulldowns, t-bar rows, dumbbell rows, shrugs. 1 minute rest between sets. Each set to failure. If you can't hit 6 reps, drop weight"
+        description: "Deadlifts, pulldowns, t-bar rows, dumbbell rows, shrugs. 1 minute rest between sets. Each set to failure. If you can't hit 6 reps, drop weight",
+        isFeatured: true
     },
     {
         name: "Push",
@@ -17,7 +18,8 @@ const workouts = [
         equipment: "Free weights, cable machine",
         cardio: true,
         cardioAmount: 20,
-        description: "Barbell Bench Press, incline bench press with dumbbells, chest flys with cables or dumbbells, dips, tricep extensions, If you can't hit 6 reps, drop weight"
+        description: "Barbell Bench Press, incline bench press with dumbbells, chest flys with cables or dumbbells, dips, tricep extensions, If you can't hit 6 reps, drop weight",
+        isFeatured: true
     },
     {
         name: "Legs",
@@ -27,7 +29,8 @@ const workouts = [
         equipment: "Free weights, leg machines, area for lunges approx 15 feet.",
         cardio: false,
         cardioAmount: 0,
-        description: "Barbell squat, bulgarian split squat, RDLs, hamstring Curls, leg extensions, lunges. If you can't hit 6 reps, drop weight"
+        description: "Barbell squat, bulgarian split squat, RDLs, hamstring Curls, leg extensions, lunges. If you can't hit 6 reps, drop weight",
+        isFeatured: true,
     },
     {
         name: "Arms",
@@ -37,7 +40,8 @@ const workouts = [
         equipment: "Free weights",
         cardio: true,
         cardioAmount: 20,
-        description: "Dumbbells Hammer Curl, Skullcrushers, cable curl, tricep rope extensions, reverse grip curl, close grip bench press."
+        description: "Dumbbells Hammer Curl, Skullcrushers, cable curl, tricep rope extensions, reverse grip curl, close grip bench press.",
+        isFeatured: true
     },
     {
         name: "Shoulders",
@@ -47,7 +51,8 @@ const workouts = [
         equipment: "Free weights, cable machines",
         cardio: true,
         cardioAmount: 20,
-        description: "Seated Military Press, side raises, front raises, rear delt fly, front barbell raise."
+        description: "Seated Military Press, side raises, front raises, rear delt fly, front barbell raise.",
+        isFeatured: true
     },
 ]
 

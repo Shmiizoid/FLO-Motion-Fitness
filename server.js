@@ -42,12 +42,18 @@ app.set('views', path.join(__dirname, 'views'));
 --------------------------------------------------------------- */
 app.use(express.static('public'))
 app.use(connectLiveReload());
+app.use(express.urlencoded({ extended: true }));
 
 
 /* Mount routes
 --------------------------------------------------------------- */
 app.get('/', function (req, res) {
-    res.send('FLO Motion Fitness')
+    db.Workout.find({ isFeatured: true })
+        .then(workouts => {
+            res.render('home', {
+                workouts: workouts
+            })
+        })
 });
 
 app.get('/seed', function (req, res) {
@@ -64,9 +70,27 @@ app.get('/seed', function (req, res) {
         })
 });
 
+app.get('/', function (req, res) {
+    db.Workout.find({ isFeatured: true })
+        .then(workouts => {
+            res.render('home', {
+                workouts: workouts
+            })
+        })
+});
+
+app.get('/about', function (req, res) {
+    res.send('You\'ve hit the about route')
+});
+
 // This tells our app to look at the `controllers/workouts.js` file 
 // to handle all routes that begin with `localhost:3000/workouts`
 app.use('/workouts', workoutsCtrl)
+
+// The "catch-all" route: Runs for any other URL that doesn't match the above routes
+app.get('*', function (req, res) {
+    res.send('404 Error: Page Not Found')
+});
 
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
