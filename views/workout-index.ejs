@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'FLO Motion Fitness'}) %>
+    <link rel="stylesheet" href="/styles/pet-index.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <section class="hero">
+        <h2>Find a Workout!</h2>
+        <h3>Get started now with some basic exercises, find what you like, change what you don't, and move!</h3>
+    </section>
+
+    <main>
+        <section class="listings">
+            <ul>
+                <% for (let workout of workouts) { %>
+                <li>
+                    <figure>
+                        <img src="<%= workout.photo %>">
+                        <figcaption>
+                            <h4><%= workout.name %></h4>
+                            <p><%= workout.equipment %>, <%= workout.cardioAmount %> minutes of cardio., <%= workout.description %></p>
+                            <a href="/workouts/<%= workout._id %>">Learn More</a>
+                        </figcaption>
+                    </figure>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
