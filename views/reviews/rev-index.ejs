@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: 'My Reviews | FLO Motion Fitness'}) %>
+    <link rel="stylesheet" href="/styles/workout-index.css">
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <main>
+        <section class="listings">
+            <ul>
+                <% for (let rev of revs) { %>
+                <li>
+                    <h4><%= rev.reviewName %> - <%= rev.reviewTime %></h4>
+                    <p>Created: <%= rev.reviewDate %></p>
+                    <a href="/reviews/<%= review._id %>">Read More</a>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

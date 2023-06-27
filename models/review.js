@@ -5,6 +5,7 @@ const reviewSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  //time for workout completion in minutes
   reviewTime: {
     type: Number,
     required: true

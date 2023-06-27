@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: 'Write a Review | FLO Motion Fitness'}) %>
+    <link rel="stylesheet" href="/styles/workout-form.css">
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <section class="hero">
+        <h2>Review Your Workout</h2>
+        <h4><i>You're writing a review for <a href="/workouts/<%= workout._id %>"><%= workout.name %></a></i></h4>
+    </section>
+
+    <form action="/reviews/create/<%= workout._id %>" method="POST">
+        <label for="reviewName">Title of Review:</label><br>
+        <input type="text" id="reviewName" name="reviewName" required><br>
+
+        <label for="reviewTime">Length of Workout(mins):</label><br>
+        <input type="number" id="reviewTime" name="reviewTime" min="0" value="0"><br>
+
+        <label for="reviewPros">What I liked:</label><br>
+        <textarea id="reviewPros" name="reviewPros" required></textarea><br>
+
+        <label for="reviewCons">What I would change:</label><br>
+        <textarea id="reviewCons" name="reviewCons" required></textarea><br>
+
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

@@ -27,10 +27,8 @@ router.get('/', (req, res) => {
 		    // format query results to appear in one array, 
 		    // rather than an array of objects containing arrays 
 	    	const flatList = []
-	    	for (let workout of workouts) {
-	        	flatList.push(...workout.reviews)
-	    	}
-	    	res.json(flatList)
+	    	for (let workout of workouts) { flatList.push(...workout.reviews) }
+            res.render('workouts/rev-index', { apps: flatList })
 		}
 	)
 });
@@ -46,8 +44,8 @@ router.post('/create/:workoutId', (req, res) => {
         req.params.workoutId,
         { $push: { reviews: req.body } },
         { new: true }
-    )
-        .then(workout => res.json(workout))
+        )
+        .then(() => res.redirect('/workouts/' + req.params.workoutId))
 });
 
 // Show Route: GET localhost:3000/applications/:id

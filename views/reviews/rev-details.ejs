@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: 'My Reviews | FLO Motion Fitness'}) %>
+    <link rel="stylesheet" href="/styles/rev-details.css">
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <section class="reviews">
+        <h1>Applicant: <%= rev.reviewName %></h1>
+        <table>
+            <tr>
+                <th>
+                    <h2>Workout Time:</h2>
+                </th>
+                <td>
+                    <h2><%= rev.reviewTime %></h2>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h2>What I liked:</h2>
+                </th>
+                <td>
+                    <h2><%= rev.reviewPros %></h2>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h2>What I would change:</h2>
+                </th>
+                <td>
+                    <h2><%= rev.reviewCons %></h2>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h2>Date submitted:</h2>
+                </th>
+                <td>
+                    <h2><%= rev.reviewDate.toLocaleDateString() %></h2>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
