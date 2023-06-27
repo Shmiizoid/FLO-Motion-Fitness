@@ -28,16 +28,22 @@ router.get('/', (req, res) => {
 		    // rather than an array of objects containing arrays 
 	    	const flatList = []
 	    	for (let workout of workouts) { flatList.push(...workout.reviews) }
-            res.render('workouts/rev-index', { apps: flatList })
+            res.render('reviews/rev-index', { revs: flatList })
 		}
 	)
 });
 
 // New Route: GET localhost:3000/reviews/new
 router.get('/new/:workoutId', (req, res) => {
-    res.send('You\'ve reached the new route. You\'ll be making a new review for workout ' + req.params.workoutId)
+    db.Workout.findById(req.params.workoutId)
+        .then(workout => {
+            if (workout) {
+                res.render('reviews/new-form.ejs', { workout: workout })
+            } else {
+                res.render('404')
+            }
+        })
 })
-
 // Create Route: POST localhost:3000/reviews/
 router.post('/create/:workoutId', (req, res) => {
     db.Workout.findByIdAndUpdate(
@@ -57,7 +63,7 @@ router.get('/:id', (req, res) => {
         .then(workout => {
 	        // format query results to appear in one object, 
 	        // rather than an object containing an array of one object
-            res.json(workout.reviews[0])
+            res.render('reviews/rev-details', { rev: workout.reviews[0] })
         })
 });
 
@@ -68,7 +74,7 @@ router.delete('/:id', (req, res) => {
         { $pull: { reviews: { _id: req.params.id } } },
         { new: true }
     )
-        .then(workout => res.json(workout))
+        .then(workout => res.redirect('/workouts/' + workout._id))
 });
 
 

@@ -16,11 +16,12 @@
                 <li>
                     <h4><%= rev.reviewName %> - <%= rev.reviewTime %></h4>
                     <p>Created: <%= rev.reviewDate %></p>
-                    <a href="/reviews/<%= review._id %>">Read More</a>
+                    <a href="/reviews/<%= rev._id %>">Read More</a>
                 </li>
                 <% } %>
             </ul>
         </section>
+        
     </main>
 
     <%- include('../partials/footer.ejs') %>
