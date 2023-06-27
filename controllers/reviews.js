@@ -19,8 +19,8 @@ const db = require('../models')
 
 /* Routes
 --------------------------------------------------------------- */
-// Index Route (All Applications): 
-// GET localhost:3000/applications/
+// Index Route (All Reviews): 
+// GET localhost:3000/reviews/
 router.get('/', (req, res) => {
 	db.Workout.find({}, { reviews: true, _id: false })
         .then(workouts => {
@@ -35,42 +35,42 @@ router.get('/', (req, res) => {
 	)
 });
 
-// New Route: GET localhost:3000/applications/new
-router.get('/new/:petId', (req, res) => {
-    res.send('You\'ve reached the new route. You\'ll be making a new application for pet ' + req.params.petId)
+// New Route: GET localhost:3000/reviews/new
+router.get('/new/:workoutId', (req, res) => {
+    res.send('You\'ve reached the new route. You\'ll be making a new review for workout ' + req.params.workoutId)
 })
 
-// Create Route: POST localhost:3000/applications/
-router.post('/create/:petId', (req, res) => {
-    db.Pet.findByIdAndUpdate(
-        req.params.petId,
-        { $push: { applications: req.body } },
+// Create Route: POST localhost:3000/reviews/
+router.post('/create/:workoutId', (req, res) => {
+    db.Workout.findByIdAndUpdate(
+        req.params.workoutId,
+        { $push: { reviews: req.body } },
         { new: true }
     )
-        .then(pet => res.json(pet))
+        .then(workout => res.json(workout))
 });
 
 // Show Route: GET localhost:3000/applications/:id
 router.get('/:id', (req, res) => {
-    db.Pet.findOne(
-        { 'applications._id': req.params.id },
-        { 'applications.$': true, _id: false }
+    db.Workout.findOne(
+        { 'reviews._id': req.params.id },
+        { 'reviews.$': true, _id: false }
     )
-        .then(pet => {
+        .then(workout => {
 	        // format query results to appear in one object, 
 	        // rather than an object containing an array of one object
-            res.json(pet.applications[0])
+            res.json(workout.reviews[0])
         })
 });
 
 // Destroy Route: DELETE localhost:3000/applications/:id
 router.delete('/:id', (req, res) => {
-    db.Pet.findOneAndUpdate(
-        { 'applications._id': req.params.id },
-        { $pull: { applications: { _id: req.params.id } } },
+    db.Workout.findOneAndUpdate(
+        { 'reviews._id': req.params.id },
+        { $pull: { reviews: { _id: req.params.id } } },
         { new: true }
     )
-        .then(pet => res.json(pet))
+        .then(workout => res.json(workout))
 });
 
 

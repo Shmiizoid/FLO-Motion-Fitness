@@ -21,7 +21,7 @@ const app = express();
 /* Require the routes in the controllers folder
 --------------------------------------------------------------- */
 const workoutsCtrl = require('./controllers/workouts')
-
+const revsCtrl = require('./controllers/reviews')
 
 /* Configure the app to refresh the browser when nodemon restarts
 --------------------------------------------------------------- */
@@ -91,6 +91,7 @@ app.get('/about', function (req, res) {
 // to handle all routes that begin with `localhost:3000/workouts`
 app.use('/workouts', workoutsCtrl)
 
+app.use('/reviews', revsCtrl)
 // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 app.get('*', function (req, res) {
     res.render('404')

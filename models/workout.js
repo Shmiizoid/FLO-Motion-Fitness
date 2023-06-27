@@ -1,6 +1,6 @@
 // Require the Mongoose package
 const mongoose = require('mongoose');
-const applicationSchema = require('./review.js')
+const reviewSchema = require('./review.js')
 
 // Create a schema to define the properties of the workouts collection
 const workoutSchema = new mongoose.Schema({
