@@ -84,7 +84,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/about', function (req, res) {
-    res.send('You\'ve hit the about route')
+    res.render('about')
 });
 
 // This tells our app to look at the `controllers/workouts.js` file 
@@ -93,7 +93,7 @@ app.use('/workouts', workoutsCtrl)
 
 // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 app.get('*', function (req, res) {
-    res.send('404 Error: Page Not Found')
+    res.render('404')
 });
 
 /* Tell the app to listen on the specified port

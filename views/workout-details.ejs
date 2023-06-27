@@ -19,6 +19,14 @@
             <p><strong>Cardio Amount:</strong> <%= `${workout.cardioAmount}` %></p>
             <p><strong>Description:</strong> <%= workout.description %></p>
         </section>
+
+        <section class="actions">
+            <button class="btn"><a href="/workouts/<%= workout._id %>/edit">Edit</a></button>
+            <form method="POST" action="/workouts/<%= workout._id %>?_method=DELETE">
+                <input class="btn" type="submit" value="Delete" />
+            </form>
+        </section>
+        
     </div>
 
     <%- include('./partials/footer.ejs') %>

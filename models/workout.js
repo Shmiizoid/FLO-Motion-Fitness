@@ -1,5 +1,6 @@
 // Require the Mongoose package
 const mongoose = require('mongoose');
+const applicationSchema = require('./review.js')
 
 // Create a schema to define the properties of the workouts collection
 const workoutSchema = new mongoose.Schema({
@@ -13,6 +14,9 @@ const workoutSchema = new mongoose.Schema({
     description: { type: String, required: true },
     isFeatured: { type: Boolean, default: false },
     
+    	// the reviews array can only accept objects that match the criteria specified
+    // in the reviewSchema. In other words, the reviews array can only accept reviews
+	reviews: [reviewSchema]
 });
 
 // Export the schema as a Monogoose model. 

@@ -31,7 +31,7 @@ router.get('/', function (req, res) {
 // New Route (GET/Read): This route renders a form 
 // which the user will fill out to POST (create) a new location
 router.get('/new', (req, res) => {
-    res.send('You\'ve hit the new route!')
+    res.render('new-form')
 })
 
 // Create Route (POST/Create): This route receives the POST request sent from the new route,
@@ -39,14 +39,14 @@ router.get('/new', (req, res) => {
 // and redirects the user to the new workout's show page
 router.post('/', (req, res) => {
     db.Workout.create(req.body)
-        .then(workout => res.json(workout))
+    .then(workout => res.redirect('/workouts/' + workout._id))
 })
 
 // Edit Route (GET/Read): This route renders a form
 // the user will use to PUT (edit) properties of an existing workout
 router.get('/:id/edit', (req, res) => {
     db.Workout.findById(req.params.id)
-        .then(workout => res.send('You\'ll be editing workout ' + workout._id))
+        .then(workout => res.render('edit-form', { workout: workout }))
 })
 
 // Update Route (PUT/Update): This route receives the PUT request sent from the edit route, 
@@ -58,14 +58,14 @@ router.put('/:id', (req, res) => {
         req.body,
         { new: true }
     )
-        .then(workout => res.json(workout))
+        .then(workout => res.redirect('/workouts/' + workout._id))
 })
 
 // Destroy Route (DELETE/Delete): This route deletes a workout document 
 // using the URL parameter (which will always be the workout document's ID)
 router.delete('/:id', (req, res) => {
     db.Workout.findByIdAndRemove(req.params.id)
-        .then(workout => res.send('You\'ve deleted workout ' + workout._id))
+        .then(workout => res.redirect('/workouts'))
 })
 
 // Show Route (GET/Read): Will display an individual workout document
@@ -77,7 +77,7 @@ router.get('/:id', function (req, res) {
                 workout: workout
             })
         })
-        .catch(() => res.send('404 Error: Page Not Found'))
+        .catch(() => res.render('404'))
 })
 
 
