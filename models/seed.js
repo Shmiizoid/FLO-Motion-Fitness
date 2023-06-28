@@ -56,5 +56,4 @@ const workouts = [
     },
 ]
 
-//Export seed data to models/index.js
 module.exports = workouts

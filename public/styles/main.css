@@ -1,4 +1,3 @@
-/* Reset styles for cross-browser consistency */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +16,6 @@
     border-radius: 2px;
 }
 
-/* General styles */
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -36,7 +34,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Header styles */
+/* //Header */
 header {
     display: flex;
     justify-content: space-between;
@@ -54,6 +52,10 @@ h1 a:hover {
     text-decoration: none;
 }
 
+nav {
+    background-color: #d1e7dd;
+}
+
 nav ul {
     display: flex;
     list-style: none;
@@ -67,7 +69,6 @@ nav a {
     font-size: 1.2rem;
 }
 
-/* Hero section styles */
 .hero {
     display: flex;
     flex-direction: column;
@@ -75,6 +76,9 @@ nav a {
     align-items: center;
     background-color: #e8f1f2;
     height: 40vh;
+    background-image: url(https://cdn.pixabay.com/photo/2013/02/05/15/18/landscape-78058_1280.jpg);
+    background-size: cover;
+    
 }
 
 .hero h2 {
@@ -112,7 +116,7 @@ nav a {
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: #333;
+    background-color: #d1e7dd;
     width: calc(100vw - 1rem);
 }
 
