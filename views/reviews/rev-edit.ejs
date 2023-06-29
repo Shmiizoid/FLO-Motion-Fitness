@@ -2,49 +2,41 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'Edit a Workout | FLO Motion Fitness'}) %>
+    <%- include('./partials/head.ejs', {title: 'Edit an Entry | FLO Motion Fitness'}) %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles/workout-form.css">
+    <link rel="stylesheet" href="/styles/new-form.css">
 </head>
 
 <body>
     <%- include('./partials/nav.ejs') %>
 
     <section class="hero">
-        <h2>Edit a Workout</h2>
-        <h4><i>Let's get moving!</i></h4>
+        <h2>Edit your Entry</h2>
+        <h4><i>Great Work!</i></h4>
     </section>
 
-    <form method="POST" action="/workouts/<%= workout._id %>?_method=PUT">
-        <!-- Name input -->
-        <label for="name">Workout Name:</label>
-        <input type="text" id="name" name="name" value="<%= workout.name %>" required>
+    <form method="POST" action="/reviews/<%= rev._id %>?_method=PUT">
+        <!-- Name -->
+        <label for="reviewName">Entry Title:</label>
+        <input type="text" id="reviewName" name="reviewName" value="<%= rev.reviewName%>" required>
         <br>
-        <!-- Exercise input -->
-        <label for="reps">Number of Exercises in Workout:</label>
-        <input type="number" id="exercises" name="exercises" value="<%= workout.exercises %>" min="0" required>
+        <!-- Review Time (time in mins for workout) -->
+        <label for="reviewTime">Workout Timet:</label>
+        <input type="number" id="reviewTime" name="reviewTime" value="<%= rev.reviewTime %>" min="0" required>
         <br>
-        <!-- Sets input -->
-        <label for="sets">Sets per Exercise:</label>
-        <input type="number" id="sets" name="sets" value="<%= workout.sets %>" min="0" required>
+        <!-- Pros -->
+        <label for="reviewPros">What I liked:</label>
+        <textarea id="reviewPros" name="reviewPros" required><%= rev.reviewPros %></textarea>
         <br>
-        <!-- Reps input -->
-        <label for="reps">Repetitions per Exercise:</label>
-        <input type="number" id="reps" name="reps" value="<%= workout.reps %>" min="0" required>
-        <br>
-        <!-- CardioAmount input -->
-         <label for="cardioAmount">Cardio Amount:</label>
-        <input type="number" id="cardioAmount" name="cardioAmount" value="<%= workout.cardioAmount %>" min="0" required>
-        <br>
-        <!-- Description input -->
-        <label for="description">Workout Description:</label>
-        <textarea id="description" name="description" required><%= workout.description %></textarea>
+        <!-- Review Cons -->
+        <label for="description">What I would change:</label>
+        <textarea id="reviewCons" name="reviewCons" required><%= rev.reviewCons %></textarea>
         <br>
         <input type="submit" value="Edit Workout">
     </form>
-
+   
     <%- include('./partials/footer.ejs') %>
 </body>
 

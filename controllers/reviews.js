@@ -47,6 +47,13 @@ router.get('/:id', (req, res) => {
         })
 });
 
+//Edit
+router.get('/:id/edit', (req, res) => {
+    db.Workout.findById(req.params.id)
+        .then(workout => res.render('reviews/rev-edit', { rev: workout.reviews[0] }))
+});
+
+
 // Destroy Route
 router.delete('/:id', (req, res) => {
     db.Workout.findOneAndUpdate(
