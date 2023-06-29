@@ -60,5 +60,5 @@ router.get('/:id', function (req, res) {
         .catch(() => res.render('404'))
 })
 
-//export for server.js
+
 module.exports = router

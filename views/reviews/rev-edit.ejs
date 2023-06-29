@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'Edit an Entry | FLO Motion Fitness'}) %>
+    <%- include('../partials/head.ejs', {title: 'Edit an Entry | FLO Motion Fitness'}) %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
@@ -10,34 +10,34 @@
 </head>
 
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <%- include('../partials/nav.ejs') %>
 
     <section class="hero">
         <h2>Edit your Entry</h2>
         <h4><i>Great Work!</i></h4>
     </section>
 
-    <form method="POST" action="/reviews/<%= rev._id %>?_method=PUT">
+    <form method="POST" action="/reviews/<%= review._id %>?_method=PUT">
         <!-- Name -->
         <label for="reviewName">Entry Title:</label>
-        <input type="text" id="reviewName" name="reviewName" value="<%= rev.reviewName%>" required>
+        <input type="text" id="reviewName" name="reviewName" value="<%= review.reviewName%>" required>
         <br>
         <!-- Review Time (time in mins for workout) -->
         <label for="reviewTime">Workout Timet:</label>
-        <input type="number" id="reviewTime" name="reviewTime" value="<%= rev.reviewTime %>" min="0" required>
+        <input type="number" id="reviewTime" name="reviewTime" value="<%= review.reviewTime %>" min="0" required>
         <br>
         <!-- Pros -->
         <label for="reviewPros">What I liked:</label>
-        <textarea id="reviewPros" name="reviewPros" required><%= rev.reviewPros %></textarea>
+        <textarea id="reviewPros" name="reviewPros" required><%= review.reviewPros %></textarea>
         <br>
         <!-- Review Cons -->
         <label for="description">What I would change:</label>
-        <textarea id="reviewCons" name="reviewCons" required><%= rev.reviewCons %></textarea>
+        <textarea id="reviewCons" name="reviewCons" required><%= review.reviewCons %></textarea>
         <br>
         <input type="submit" value="Edit Workout">
     </form>
    
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

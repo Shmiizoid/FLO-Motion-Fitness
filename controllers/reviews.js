@@ -49,10 +49,22 @@ router.get('/:id', (req, res) => {
 
 //Edit
 router.get('/:id/edit', (req, res) => {
-    db.Workout.findById(req.params.id)
-        .then(workout => res.render('reviews/rev-edit', { rev: workout.reviews[0] }))
+    db.Workout.findOne({ 'reviews._id': req.params.id })
+        .then(workout => {
+            if (!workout) {
+                throw new Error('Workout not found');
+            }
+            const review = workout.reviews.find(r => r._id.toString() === req.params.id);
+            if (!review) {
+                throw new Error('Review not found');
+            }
+            res.render('reviews/rev-edit', { review: review });
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(404).send('Review not found');
+        });
 });
-
 
 // Destroy Route
 router.delete('/:id', (req, res) => {
