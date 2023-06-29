@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'Edit a Workout | FLO Motion Fitness'}) %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/workout-form.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <section class="hero">
+        <h2>Edit a Workout</h2>
+        <h4><i>Let's get moving!</i></h4>
+    </section>
+
+    <form method="POST" action="/workouts/<%= workout._id %>?_method=PUT">
+        <!-- Name input -->
+        <label for="name">Workout Name:</label>
+        <input type="text" id="name" name="name" value="<%= workout.name %>" required>
+        <br>
+        <!-- Exercise input -->
+        <label for="reps">Number of Exercises in Workout:</label>
+        <input type="number" id="exercises" name="exercises" value="<%= workout.exercises %>" min="0" required>
+        <br>
+        <!-- Sets input -->
+        <label for="sets">Sets per Exercise:</label>
+        <input type="number" id="sets" name="sets" value="<%= workout.sets %>" min="0" required>
+        <br>
+        <!-- Reps input -->
+        <label for="reps">Repetitions per Exercise:</label>
+        <input type="number" id="reps" name="reps" value="<%= workout.reps %>" min="0" required>
+        <br>
+        <!-- CardioAmount input -->
+         <label for="cardioAmount">Cardio Amount:</label>
+        <input type="number" id="cardioAmount" name="cardioAmount" value="<%= workout.cardioAmount %>" min="0" required>
+        <br>
+        <!-- Description input -->
+        <label for="description">Workout Description:</label>
+        <textarea id="description" name="description" required><%= workout.description %></textarea>
+        <br>
+        <input type="submit" value="Edit Workout">
+    </form>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

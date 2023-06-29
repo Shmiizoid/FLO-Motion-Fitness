@@ -17,7 +17,7 @@
             <ul>
                 <% for (let rev of revs) { %>
                 <li>
-                    <h4><%= rev.reviewName %> - <%= rev.reviewTime %></h4>
+                    <h4><%= rev.reviewName %> - <%= rev.reviewTime %> minutes</h4>
                     <p>Created: <%= rev.reviewDate %></p>
                     <a href="/reviews/<%= rev._id %>">Read More</a>
                 </li>

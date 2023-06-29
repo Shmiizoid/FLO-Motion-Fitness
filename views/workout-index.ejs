@@ -26,7 +26,7 @@
                         <img src="<%= workout.photo %>">
                         <figcaption>
                             <h4><%= workout.name %></h4>
-                            <p><%= workout.equipment %>, <%= workout.cardioAmount %> minutes of cardio., <%= workout.description %></p>
+                            <p><%= workout.equipment %> <%= workout.cardioAmount %> minutes of cardio. <%= workout.description %></p>
                             <a href="/workouts/<%= workout._id %>">Learn More</a>
                         </figcaption>
                     </figure>

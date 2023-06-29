@@ -23,6 +23,7 @@ body {
     color: #333;
     background-color: #f7f7f7;
     min-height: 100vh;
+    margin: 0;
 }
 
 a {
@@ -101,11 +102,13 @@ nav a:hover {
 .hero h3 {
     font-size: 2rem;
     text-align: center;
+    color: #fff;
 }
 
 .hero h4 {
     font-size: 1.5rem;
     text-align: center;
+    color: #f7f7f7;
 }
 
 .btn {
@@ -129,6 +132,8 @@ footer {
     padding: 1rem;
     background-color: rgb(17,39,96);
     width: calc(100vw - 1rem);
+    display: relative;
+    bottom: 0;
 }
 
 footer * {
