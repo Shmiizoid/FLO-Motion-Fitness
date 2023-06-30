@@ -12,7 +12,6 @@ const app = express();
 const workoutsCtrl = require('./controllers/workouts')
 const revsCtrl = require('./controllers/reviews')
 
-
 // Detect if running in a dev environment
 if (process.env.ON_HEROKU === 'false') {
     // Configure the app to refresh the browser when nodemon restarts
@@ -34,6 +33,9 @@ app.use(express.static('public'))
 // Allows us to interpret POST requests from the browser as another request type: DELETE, PUT, etc.
 app.use(methodOverride('_method'));
 
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 //Mount Routes
 app.get('/', function (req, res) {
