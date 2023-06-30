@@ -66,6 +66,30 @@ router.get('/:id/edit', (req, res) => {
         });
 });
 
+//Update
+router.put('/:id', (req, res) => {
+    db.Workout.findOneAndUpdate(
+      { 'reviews._id': req.params.id },
+      { $set: { 'reviews.$.reviewName': req.body.reviewName, 'reviews.$.reviewTime': req.body.reviewTime, 'reviews.$.reviewPros': req.body.reviewPros, 'reviews.$.reviewCons': req.body.reviewCons } },
+      { new: true }
+    )
+      .then(updatedWorkout => {
+        if (!updatedWorkout) {
+          throw new Error('Workout not found');
+        }
+        const updatedReview = updatedWorkout.reviews.find(r => r._id.toString() === req.params.id);
+        if (!updatedReview) {
+          throw new Error('Review not found');
+        }
+        res.redirect(`/reviews/${req.params.id}`);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(404).send('Review not found');
+      });
+  });
+
+
 // Destroy Route
 router.delete('/:id', (req, res) => {
     db.Workout.findOneAndUpdate(

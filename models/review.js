@@ -26,7 +26,3 @@ const reviewSchema = new mongoose.Schema({
 
 module.exports = reviewSchema;
 
-
-//add workout id to index?
-//edit, add edit pencil to button
-//API for workouts?
