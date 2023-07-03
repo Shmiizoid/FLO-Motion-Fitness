@@ -80,6 +80,22 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.slide-in {
+    position: relative;
+    left: -100%;
+    animation: slideInLeft 0.5s ease-in-out forwards;
+}
+
+@keyframes slideInLeft {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+/* top of page */
 .hero {
     display: flex;
     flex-direction: column;
