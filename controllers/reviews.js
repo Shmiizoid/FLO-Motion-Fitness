@@ -4,15 +4,22 @@ const router = express.Router()
 const db = require('../models')
 
 
-//Index
+// Index
 router.get('/', (req, res) => {
-	db.Workout.find({}, { reviews: true, _id: false })
+    db.Workout.find({}, { reviews: true, _id: false })
         .then(workouts => {
-	    	const flatList = []
-	    	for (let workout of workouts) { flatList.push(...workout.reviews) }
-            res.render('reviews/rev-index', { revs: flatList })
-		}
-	)
+            let flatList = [];
+            for (let workout of workouts) {
+                flatList.push(...workout.reviews);
+            }
+            // Sort the reviews by creation date in descending order
+            flatList.sort((a, b) => b.reviewDate - a.reviewDate);
+            res.render('reviews/rev-index', { revs: flatList });
+        })
+        .catch(error => {
+            console.error(error);
+            res.render('404');
+        });
 });
 
 //New

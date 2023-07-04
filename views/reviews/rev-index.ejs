@@ -20,13 +20,13 @@
     <main>
         <section class="listings">
             <ul>
-                <% for (let rev of revs) { %>
+                <% revs.forEach(function(rev) { %>
                 <li>
                     <h4><%= rev.reviewName %> - <%= rev.reviewTime %> minutes</h4>
                     <p>Created: <%= rev.reviewDate %></p>
                     <a href="/reviews/<%= rev._id %>">Read More</a>
                 </li>
-                <% } %>
+                <% }); %>
             </ul>
         </section>
         
