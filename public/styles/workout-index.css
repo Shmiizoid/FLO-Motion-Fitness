@@ -34,6 +34,7 @@ main {
 
 figcaption {
     text-align: left;
+    max-width: 400px;
 }
 
 .listings li h4 {
@@ -50,15 +51,16 @@ figcaption {
     background-color: #333;
     color: #fff;
     font-size: 18px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: none;
     border-radius: 4px;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    position: relative;
+    bottom: 2px;
+    right: 2px;
     text-decoration: none;
 }
 
 .listings li a:hover {
     background-color: #555;
+    font-style: italic;
 }
