@@ -21,18 +21,19 @@ table {
     border-radius: 1rem;
 }
 
-th {
-    width: 45%;
-    text-align: left;
-    padding-left: 20%;
-}
-
 td {
-    padding-left: 1rem;
+    padding: 10px 0;
 }
 
-td h2 {
+h2 {
     font-weight: 100;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.entry-label {
+   text-decoration: underline;
+   font-weight: bolder;
 }
 
 #entry-action {
@@ -42,3 +43,23 @@ td h2 {
   justify-content: space-around;
   margin: 0.5rem;
 }
+
+@media (max-width: 600px) {
+    table {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  
+    td {
+      width: 100%;
+    }
+  
+    th,
+    td {
+      text-align: left;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+  }

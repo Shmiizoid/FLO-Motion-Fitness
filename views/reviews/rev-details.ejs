@@ -14,40 +14,34 @@
 
     <section class="reviews">
         <h1>Entry Title: <%= rev.reviewName %></h1>
-        <table>
-            <tr>
-                <th>
-                    <h2>Workout Time:</h2>
-                </th>
-                <td>
-                    <h2><%= rev.reviewTime %> mins</h2>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    <h2>What I liked:</h2>
-                </th>
-                <td>
-                    <h2><%= rev.reviewPros %></h2>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    <h2>What I would change:</h2>
-                </th>
-                <td>
-                    <h2><%= rev.reviewCons %></h2>
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    <h2>Date submitted:</h2>
-                </th>
-                <td>
-                    <h2><%= rev.reviewDate.toLocaleDateString() %></h2>
-                </td>
-            </tr>
-        </table>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>
+                        <h2 class="entry-label">Workout Time:</h2>
+                        <h2><%= rev.reviewTime %> mins</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2 class="entry-label">What I liked:</h2>
+                        <h2><%= rev.reviewPros %></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2 class="entry-label">What I would change:</h2>
+                        <h2><%= rev.reviewCons %></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h2 class="entry-label">Date submitted:</h2>
+                        <h2><%= rev.reviewDate.toLocaleDateString() %></h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </section>
 
     <section id="entry-action">
