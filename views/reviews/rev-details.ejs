@@ -13,7 +13,7 @@
     <%- include('../partials/nav.ejs') %>
 
     <section class="reviews">
-        <h1>Entry Name: <%= rev.reviewName %></h1>
+        <h1>Entry Title: <%= rev.reviewName %></h1>
         <table>
             <tr>
                 <th>
@@ -50,8 +50,8 @@
         </table>
     </section>
 
-    <section>
-        <button class="btn"><a href="../reviews/<%= rev._id %>/edit">✏️</a></button>
+    <section id="entry-action">
+        <button class="btn"><a href="../reviews/<%= rev._id %>/edit">Edit</a></button>
     </section>
     <%- include('../partials/footer.ejs') %>
 </body>

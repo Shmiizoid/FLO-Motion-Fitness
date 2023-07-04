@@ -86,12 +86,6 @@ strong {
   width: 80%;
 }
 
-.modal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .modal-body, .modal-footer {
   margin-top: 20px;
   display: flex;

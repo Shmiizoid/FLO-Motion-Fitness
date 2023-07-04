@@ -5,7 +5,7 @@
     width: 60vw;
     min-width: 300px;
     border: 2px solid #ccc;
-    padding: 40px;
+    padding: 15px;
     overflow-y: scroll;
 }
 
@@ -33,4 +33,12 @@ td {
 
 td h2 {
     font-weight: 100;
+}
+
+#entry-action {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0.5rem;
 }
