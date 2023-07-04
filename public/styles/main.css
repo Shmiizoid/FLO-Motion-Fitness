@@ -141,7 +141,7 @@ nav a:hover {
 
     .nav-menu.active{
         left: 0;
-        
+
     }
 }
 
@@ -209,4 +209,8 @@ footer * {
 
 footer ul {
     justify-content: center;
+}
+
+.footerFlo {
+    text-align: center;
 }

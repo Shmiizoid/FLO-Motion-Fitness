@@ -97,7 +97,7 @@ router.delete('/:id', (req, res) => {
         { $pull: { reviews: { _id: req.params.id } } },
         { new: true }
     )
-        .then(workout => res.redirect('/workouts/' + workout._id))
+        .then(workout => res.redirect('/reviews'))
 });
 
 module.exports = router
