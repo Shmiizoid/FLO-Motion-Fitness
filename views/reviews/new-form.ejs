@@ -14,11 +14,11 @@
 
     <section class="hero">
         <h2>Log your workout!</h2>
-        <h4><i>You're writing a movement entry for <a href="/workouts/<%= workout._id %>"><%= workout.name %></a></i></h4>
+        <h4><i>You're writing an entry for <a href="/workouts/<%= workout._id %>"><%= workout.name %></a></i></h4>
     </section>
 
     <form action="/reviews/create/<%= workout._id %>" method="POST">
-        <label for="reviewName">Title of Review:</label><br>
+        <label for="reviewName">Title:</label><br>
         <input type="text" id="reviewName" name="reviewName" required><br>
 
         <label for="reviewTime">Length of Workout(mins):</label><br>
