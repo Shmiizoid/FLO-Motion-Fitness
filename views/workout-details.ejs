@@ -25,7 +25,7 @@
 
         <section class="actions">
             <button class="btn"><a href="/workouts/<%= workout._id %>/edit">Edit</a></button>
-            <button class="btn"><a href="/reviews/new/<%= workout._id %>">Completed</a></button>
+            <button class="btn"><a href="/reviews/new/<%= workout._id %>">Log</a></button>
             <form method="POST" action="/workouts/<%= workout._id %>?_method=DELETE">
                 <input class="btn" type="submit" value="Delete" />
             </form>

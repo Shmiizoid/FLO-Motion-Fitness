@@ -44,9 +44,18 @@ strong {
     margin-top: 1rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .btn a {
     color: #fff;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.3rem 0.6rem; /* Adjust the padding to make the buttons smaller */
+        font-size: 0.8rem; /* Adjust the font size to make the text smaller */
+        /* Add any other necessary styles for mobile */
+    }
 }
