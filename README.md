@@ -1,4 +1,4 @@
 # FLO-Motion-Fitness
 FLO Motion fitness
 
-![Home Page Screenshot](/public/assets/image.png)
+![Home Page Screenshot](/assets/image.png)
