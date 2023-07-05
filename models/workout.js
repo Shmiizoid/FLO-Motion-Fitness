@@ -11,8 +11,7 @@ const workoutSchema = new mongoose.Schema({
     cardio: { type: Number, required: false },
     cardioAmount: { type: Number, required: false },
     description: { type: String, required: true },
-    isFeatured: { type: Boolean, default: false },
-    photo: { type: String, default: "https://cdn1.iconfinder.com/data/icons/smashicons-fitness-yellow/60/26_-Love_Gym-_Yellow-512.png" },
+    photo: { type: String, default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVtGzPWhGzjCb6RvCD9V_f8y-u5kHR1TXf9nTTwwgDoCoWYHQYK--fpYzjiTY8YD3ykXY&usqp=CAU" },
     //Reviews added[array]
 	reviews: [reviewSchema]
 });

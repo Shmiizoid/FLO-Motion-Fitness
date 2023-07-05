@@ -2,8 +2,6 @@
 const express = require('express')
 const router = express.Router()
 
-
-//Requires CB collection
 const db = require('../models')
 
 //Index

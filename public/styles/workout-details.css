@@ -46,7 +46,6 @@ strong {
     align-items: center;
     justify-content: space-around;
     margin: 0.5rem;
-    
 }
 
 .btn a {
@@ -57,10 +56,9 @@ strong {
 /* Media query for mobile screens */
 @media (max-width: 480px) {
     .btn {
-        padding: 0.5rem 1rem; /* Adjust the padding to make the buttons smaller */
-        font-size: 0.9rem; /* Adjust the font size to make the text smaller */
-        /* Add any other necessary styles for mobile */
-        margin: 0.5rem; /* Add margin around buttons for mobile */
+        padding: 0.5rem 1rem; 
+        font-size: 0.9rem; 
+        margin: 0.5rem; 
 
     }
 }

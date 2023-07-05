@@ -61,10 +61,3 @@ figcaption {
     justify-content: space-between;
 }
 
-.featured-info h3 {
-    font-size: calc(1em + 0.5vw);
-}
-
-.featured-info p {
-    font-size: calc(0.5rem + 0.5vw);
-}
