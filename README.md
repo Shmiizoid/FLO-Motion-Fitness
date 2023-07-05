@@ -35,3 +35,28 @@ The technologies I used to create this portfolio were MongoDB, Express, Node.js,
 
     Alternatively, you can access the hosted application at https://flomotion-69ef3901df7c.herokuapp.com/.
 
+# User Stories
+
+As a new user, I am looking for an app that I can use to track my progress and try new workouts.
+
+As a potential employer, I want to see that Emilio can demonstrate successful Restful routes and CRUD using a MEN stack.
+
+As a novice lifter, I want an app that I can use to update my workouts as I progress in my fitness journey.
+
+# Wireframes
+
+![Wireframe Colors](/public/assets/IMG_wireframeColor.png)
+![Wireframe 1](/public/assets/IMG_wireframe1.png)
+![Wireframe 2](/public/assets/IMG_wireframe2.png)
+![Wireframe 3](/public/assets/IMG_wireframe3.png)
+![Wireframe 4](/public/assets/IMG_wireframe4.png)
+
+# Unsolved problems and hurdles
+
+One hurdle I had during this project was that I changed my idea for the application after submitting the initial proposal. I decided it would be best not to make an application so similar to my previous "Express Store" application which featured Pokemon cards. I instead focused on an original passion of mine, fitness, and had to start over. 
+
+I tried to utilize bootstrap but did not find it helpful for this particular project. I am sure with more experience, bootstrap would be a good tool but I did not implement it until I had designed a bit of the application myself using css.
+
+An unsolved problem I have is that I wanted there to be a login for a more custom experience for each user. I will continue to work on this application to add more features.
+
+
