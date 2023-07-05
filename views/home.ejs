@@ -28,25 +28,6 @@
             <a href="/about" class="btn">Learn More</a>
         </section>
 
-        <section class="featured-workouts">
-            <h2>Featured Workouts</h2>
-            <ul class="workout-grid">
-                <% for (let workout of workouts) { %>
-                <li>
-                    <figure>
-                        <img src="<%= workout.photo %>" alt="Arnold Press">
-                    </figure>
-                    <figcaption>
-                        <div class="featured-info">
-                            <h3><%= workout.name %></h3>
-                            <p>Exercises: <%= workout.description %></p>
-                        </div>
-                        <a href="/workouts/<%= workout._id %>" class="btn">Learn More</a>
-                    </figcaption>
-                </li>
-                <% } %>
-            </ul>
-        </section>
     </main>
 
     <%- include('./partials/footer.ejs') %>

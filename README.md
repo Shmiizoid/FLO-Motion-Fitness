@@ -7,7 +7,7 @@ Project can be accessed at https://flomotion-69ef3901df7c.herokuapp.com/ .
 
 # Technologies
 
-The technologies I used to create this portfolio were MongoDB, Express, Node.js, mongoose, and Heroku(.com). 
+The technologies I used to create this portfolio were Node.js, Mongoose, Express, EJS, and CSS.
 
 # Installation Instructions
 

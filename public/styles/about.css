@@ -31,3 +31,11 @@ main {
     font-weight: bold;
     margin-right: 10px;
 }
+
+.startbtn {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0.5rem;
+}
