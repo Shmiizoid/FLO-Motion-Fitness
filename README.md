@@ -39,7 +39,7 @@ The technologies I used to create this portfolio were Node.js, Mongoose, Express
 
 As a new user, I am looking for an app that I can use to track my progress and try new workouts.
 
-As a potential employer, I want to see that Emilio can demonstrate successful Restful routes and CRUD using a MEN stack.
+As a potential employer, I want to see that Emilio can demonstrate successful RESTful routes and full CRUD using a MEN stack.
 
 As a novice lifter, I want an app that I can use to update my workouts as I progress in my fitness journey.
 
